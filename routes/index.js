@@ -1,27 +1,17 @@
 var express = require('express')
 var router = express.Router()
-
 var db = require('../db')
-
-// router.get('/', function (req, res) {
-//   db.getUsers(req.app.get('connection'))
-//     .then(function (users) {
-//       res.render('index', { users: users })
-//     })
-//     .catch(function (err) {
-//       res.status(500).send('DATABASE ERROR: ' + err.message)
-//     })
-// })
+module.exports = router
 
 router.get("/", function(req, res) {
   db.getUsers(req.app.get('connection'))
-    .then(function(users) {
-      var data = {users: users}
-      db.getLikes(req.app.get('connection'))
-        .then(function(likes) {
-          data.likes = likes
-          res.render("index", data)
-        })
+  .then(function(users) {
+    var data = {users: users}
+    db.getLikes(req.app.get('connection'))
+      .then(function(likes) {
+        data.likes = likes
+        res.render("index", data)
+      })
     })
 })
 
@@ -41,7 +31,6 @@ router.get("/userDetails/:id", function(req, res) {
         .where("users_likes.users_id", user_id)
         .then(function(userLikesArray) {
           user.userLikes = userLikesArray
-          console.log(user);
           res.render("userDetails", user)
         })
     })
@@ -64,26 +53,18 @@ router.get("/addUser", function(req, res) {
   res.render("addUser")
 })
   router.post("/addUser", function (req, res) {
-
     var newUser = {name:req.body.name, email:req.body.email, age: req.body.age}
-    console.log("addUser: ");
-    console.log(newUser);
     var like = req.body.like //passing like's id
-
     var connection = req.app.get('connection')
     connection("users")
-      .insert(newUser, 'id')
-      .then(function(newUserId) {
-        console.log("addUser: ");
-        console.log(newUserId);
-        var newUserLike = {users_id: newUserId[0], likes_id: Number(like)}
-        console.log("addUser: ");
-        console.log(newUserLike);
-        connection("users_likes")
-          .insert(newUserLike)
-          .then(function() {
-            res.redirect("/")
-          })
+    .insert(newUser, 'id')
+    .then(function(newUserId) {
+      var newUserLike = {users_id: newUserId[0], likes_id: Number(like)}
+      connection("users_likes")
+      .insert(newUserLike)
+      .then(function() {
+      res.redirect("/")
+      })
     })
   })
 
@@ -91,18 +72,16 @@ router.get("/addUser", function(req, res) {
 router.get("/likesUsers/:likeId", function(req, res) {
   var connection = req.app.get('connection')
   var likeId = req.params.likeId
-
   connection('likes_table')
     .where("id", likeId).select("like").first()
     .then(function(likeName) {
-
       connection("users")
       .join("users_likes", "users.id", "=", "users_id")
       .where("likes_id", likeId)
       .where("isDeleted", false)
       .select("name", "email")
       .then(function(users) {
-        res.render("likesUsers", {joinedUserLikes: users, like: likeName.like})
+      res.render("likesUsers", {joinedUserLikes: users, like: likeName.like})
       })
     })
 })
@@ -118,6 +97,4 @@ router.get("/usersLikes", (req, res) => {
     .then(function(users) {
       res.render("usersLikes", {joinedUserLikes: users})
     })
-} )
-
-module.exports = router
+})
