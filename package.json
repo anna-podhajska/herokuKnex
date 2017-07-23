@@ -39,6 +39,7 @@
     "express": "^4.14.1",
     "express-handlebars": "^3.0.0",
     "knex": "^0.12.9",
+    "pg": "^7.0.2",
     "sqlite3": "^3.1.8"
   }
 }
