@@ -4,10 +4,22 @@
     <title>EDA Phase 1 Express Boilerplate</title>
   </head>
   <body>
+    <h3> List of all users:</h3>
     <ul>
     {{#each users}}
-      <li>{{name}} ({{email}})</li>
+      <li><a href="/userDetails/{{id}}">{{name}}</a></li>
     {{/each}}
     </ul>
+
+    <h3> Add a new user: </h3>
+    <a href="/addUser"> add a new user </a>
+
+    <h3> Likes/hobbies and users that like the same thing: </h3>
+    {{#each likes}}
+    <li><a href="/likesUsers/{{id}}">{{like}}</a></li>
+    {{/each}}
+
+    <h3> All users and their likes list </h3>
+    <a href="/usersLikes"> click here </a>
   </body>
 </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EDA Phase 1 Express Boilerplate</title>
+  </head>
+  <body>
+
+    <h3> Details of one user </h3>
+      <a href="/">home</a> <br>
+
+    <h4> user details: </h4>
+      name: {{name}} <br> Email: {{email}} <br> Age: {{age}} <br>
+
+    <h4> this user likes: </h4>
+      {{#each userLikes}}
+        {{like}}<br>
+      {{/each}}
+
+    <h4> Delete user </h4>
+      <form action="/deleteUser/{{id}}" method="post">
+        <input type="submit" value="delete this user"/>
+      </form>
+
+
+  </body>
+</html>

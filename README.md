@@ -1,3 +1,14 @@
+
+# EDA homework
+- learning objectives:
+- routes
+- tables join (many to many)
+- adding a new user
+- deleting user
+
+
+
+
 # Boilerplate: Knex.js
 
 Phase 1 boilerplate project with:
