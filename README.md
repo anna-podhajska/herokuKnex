@@ -9,7 +9,7 @@
 
 
 
-# Boilerplate: Knex.js
+<!-- # Boilerplate: Knex.js
 
 Phase 1 boilerplate project with:
 
@@ -32,4 +32,4 @@ npm run knex seed:run
 npm run dev
 ```
 
-Be sure to check out the other npm scripts too.
+Be sure to check out the other npm scripts too. -->
