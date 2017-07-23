@@ -66,13 +66,18 @@ router.get("/addUser", function(req, res) {
   router.post("/addUser", function (req, res) {
 
     var newUser = {name:req.body.name, email:req.body.email, age: req.body.age}
+    console.log("addUser: ");
+    console.log(newUser);
     var like = req.body.like //passing like's id
 
     var connection = req.app.get('connection')
     connection("users")
-      .insert(newUser)
+      .insert(newUser, 'id')
       .then(function(newUserId) {
+        console.log("addUser: ");
+        console.log(newUserId);
         var newUserLike = {users_id: newUserId[0], likes_id: like}
+        console.log("addUser: ");
         console.log(newUserLike);
         connection("users_likes")
           .insert(newUserLike)
