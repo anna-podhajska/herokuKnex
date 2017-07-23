@@ -25,6 +25,7 @@ router.get("/", function(req, res) {
     })
 })
 
+//viewing each user's details:
 router.get("/userDetails/:id", function(req, res) {
   var connection = req.app.get('connection')
   var user_id = req.params.id
@@ -81,7 +82,7 @@ router.get("/addUser", function(req, res) {
     })
   })
 
-//all users liking the same thing
+//all users who like the same thing
 router.get("/likesUsers/:likeId", function(req, res) {
   var connection = req.app.get('connection')
   var likeId = req.params.likeId
