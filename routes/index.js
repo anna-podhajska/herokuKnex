@@ -76,7 +76,7 @@ router.get("/addUser", function(req, res) {
       .then(function(newUserId) {
         console.log("addUser: ");
         console.log(newUserId);
-        var newUserLike = {users_id: newUserId[0], likes_id: like}
+        var newUserLike = {users_id: newUserId[0], likes_id: Number(like)}
         console.log("addUser: ");
         console.log(newUserLike);
         connection("users_likes")
