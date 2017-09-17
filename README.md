@@ -1,5 +1,5 @@
 
-# learning objectives:
+## learning objectives:
 - server routes
 - tables join (many to many)
 - adding a new user
@@ -17,7 +17,7 @@
  - Node Inspector
  - nodemon
  
-## https://herokuknex.herokuapp.com/
+### https://herokuknex.herokuapp.com/
 
 ## Install
 ```
