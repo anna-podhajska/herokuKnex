@@ -1,10 +1,11 @@
 
-# KATA
-- learning objectives:
-- routes
+# learning objectives:
+- server routes
 - tables join (many to many)
 - adding a new user
 - deleting user
+- Handlebars, HTML
+- deployment on Heroku
 
 ## project with:
  - Express
