@@ -7,7 +7,7 @@
 - Handlebars, HTML
 - deployment on Heroku
 
-## project with:
+## tools:
  - Express
  - Knex
  - SQLite3
@@ -19,13 +19,21 @@
  
 ### https://herokuknex.herokuapp.com/
 
-## Install
+## install:
 ```
 npm install
 npm run knex migrate:latest
 npm run knex seed:run
 npm run dev
 ```
+
+### user stories:
+ - open the page on heroku
+ - create a new user and their name, age, hobbies
+ - view and delete user
+ - view other users that share the same hobbies 
+ - view a list of all users and their details and hobbies
+
 
 <!-- # Boilerplate: Knex.js
 
