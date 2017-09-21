@@ -1,5 +1,13 @@
-### view the app deployed on Heroku here:
-https://herokuknex.herokuapp.com/
+## herokuKnex
+quiick project done as a part of bootcamp in DevAcademy
+
+## learning objectives:
+- server routes
+- tables join (many to many)
+- saving to DB
+- deleting from DB
+- Handlebars, HTML
+- deploying on Heroku
 
 ## install:
 ```
@@ -16,14 +24,6 @@ visit the app at http://localhost:3000
  - view and delete user
  - view other users that share the same hobbies 
  - view a list of all users and their details and hobbies
- 
-## learning objectives:
-- server routes
-- tables join (many to many)
-- adding a new user
-- deleting user
-- Handlebars, HTML
-- deployment on Heroku
 
 ## tools:
  - Express
@@ -35,6 +35,8 @@ visit the app at http://localhost:3000
  - Node Inspector
  - nodemon
  
+ ## view the app deployed on Heroku here:
+https://herokuknex.herokuapp.com/
 
 
 
