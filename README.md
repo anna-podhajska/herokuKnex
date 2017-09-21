@@ -1,4 +1,4 @@
-### view the code deployed on Heroku here:
+### view the app deployed on Heroku here:
 https://herokuknex.herokuapp.com/
 
 ## install:
@@ -8,7 +8,7 @@ npm install
 npm run knex migrate:latest
 npm run knex seed:run
 npm run dev
-visit the app at [http://localhost:3000](http://localhost:3000)
+visit the app at http://localhost:3000
 ```
 ### user stories:
  - open the page on heroku
