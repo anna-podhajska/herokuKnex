@@ -1,5 +1,5 @@
 ## herokuKnex
-quiick project done as a part of bootcamp in DevAcademy
+quick project done as a part of bootcamp in DevAcademy
 
 ## learning objectives:
 - server routes
